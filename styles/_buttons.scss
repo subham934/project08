@@ -1,0 +1,55 @@
+@import "./variable";
+
+.btn {
+  overflow: hidden;
+}
+
+// arrow
+
+.arrow {
+  i {
+    font-size: 0.9rem;
+    animation: moveLR 2s infinite;
+  }
+
+  @keyframes moveLR {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+.main-btn {
+  background: $color-gradient-primary-3;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  display: inline-block;
+
+  span:last-child {
+    position: absolute;
+    top: 5px;
+    right: -55%;
+    height: 180px;
+    width: 180px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.4s ease-in-out;
+    transition: all 0.4s cubic-bezier(0.21, 0.69, 0.73, 1.08);
+  }
+
+  &:hover {
+    span {
+      right: -30%;
+      top: -15px;
+    }
+  }
+}
